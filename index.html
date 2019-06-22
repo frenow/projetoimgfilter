@@ -12,9 +12,15 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
   <h1>HTML5 Drag and Drop</h1>
   <meta name="theme-color" content="#fafafa">
+
+
+  <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
+  <!-- Either include the full CamanJS code including plugins -->
+  <script type="text/javascript" src="js/caman.full.min.js"></script>
+  <script src="js/filter.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -23,26 +29,38 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div id="example-content">
-
-    <div id="frame">
-
-      <div id="image-area">
-
-        <span id="drop-message"> Arraste a imagem aqui teste 2 </span>
-
+  <main>
+    <div id="example-content">
+      <div id="frame">
+        <div id="image-area">
+          <span id="drop-message"> Arraste a imagem aqui </span>
+        </div>
+        <span id="title"> Digite um titulo </span>
       </div>
-
-      <span id="title"> Digite um titulo </span>
     </div>
+    <div id="divButtonFormat">
+      <button class="buttonFormat" onclick="vintage()">Aplicar Filtro Vintage</button>
+      <button class="buttonFormat" onclick="lomo()">Aplicar Filtro Lomo</button>
+      <button class="buttonFormat" onclick="clarity()">Aplicar Filtro Clarity</button>
+      <button class="buttonFormat" onclick="sinCity()">Aplicar Filtro sinCity</button>
+      <button class="buttonFormat" onclick="sumrise()">Aplicar Filtro Sumrise</button>
+      <button class="buttonFormat" onclick="orangePeel()">Aplicar Filtro orangePeel</button>
+      <button class="buttonFormat" onclick="love()">Aplicar Filtro Love</button>
+      <button class="buttonFormat" onclick="grungy()">Aplicar Filtro Grungy</button>
+      <button class="buttonFormat" onclick="jarques()">Aplicar Filtro Jarques</button>
+      <button class="buttonFormat" onclick="pinhole()">Aplicar Filtro Pinhole</button>
+      <button class="buttonFormat" onclick="glowingSun()">Aplicar Filtro glowingSun</button>
+      <button class="buttonFormat" onclick="nostalgia()">Aplicar Filtro Nostalgia</button>
+    </div>
+  </main>
 
-  </div>
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" type="text/javascript"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
