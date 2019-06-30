@@ -1,6 +1,10 @@
 // funções de filtro
-function vintage() {
-    Caman("#img_ori", function () {
+
+//uso das arrow function
+//  function vintage() {
+  const tag_img = '#img_ori';	
+  let vintage = () => {
+    Caman(tag_img, function () {
       this.greyscale();
       this.contrast(5);
       this.noise(3);
@@ -10,8 +14,8 @@ function vintage() {
       this.render();
     });
   }
-  function lomo() {
-    Caman("#img_ori", function () {
+  let lomo = () => {
+    Caman(tag_img, function () {
       this.brightness(15);
       this.exposure(15);
       this.curves("rgb", [0, 0], [200, 0], [155, 255], [255, 255]);
@@ -20,8 +24,8 @@ function vintage() {
       this.render();
     });
   }
-  function clarity() {
-    Caman("#img_ori", function () {
+  let clarity = () => {
+    Caman(tag_img, function () {
       this.vibrance(20);
       this.curves("rgb", [5, 0], [130, 150], [190, 220], [250, 255]);
       this.sharpen(15);
@@ -29,8 +33,8 @@ function vintage() {
       this.render();
     });
   }
-  function sinCity() {
-    Caman("#img_ori", function () {
+  let sinCity = () => {
+    Caman(tag_img, function () {
       this.contrast(100);
       this.brightness(15);
       this.exposure(10);
@@ -40,8 +44,8 @@ function vintage() {
       this.render();
     });
   }
-  function sumrise() {
-    Caman("#img_ori", function () {
+  let sumrise = () => {
+    Caman(tag_img, function () {
       this.exposure(3.5);
       this.saturation(-5);
       this.vibrance(50);
@@ -53,8 +57,8 @@ function vintage() {
       this.render();
     });
   }
-  function orangePeel() {
-    Caman("#img_ori", function () {
+  let orangePeel = () => {
+    Caman(tag_img, function () {
       this.curves("rgb", [0, 0], [100, 50], [140, 200], [255, 255]);
       this.vibrance(-30);
       this.saturation(-30);
@@ -63,8 +67,8 @@ function vintage() {
       this.render();
     });
   }
-  function love() {
-    Caman("#img_ori", function () {
+  let love = () => {
+    Caman(tag_img, function () {
       this.brightness(5);
       this.exposure(8);
       this.contrast(4);
@@ -73,8 +77,8 @@ function vintage() {
       this.render();
     });
   }
-  function grungy() {
-    Caman("#img_ori", function () {
+  let grungy = () => {
+    Caman(tag_img, function () {
       this.gamma(1.5);
       this.clip(25);
       this.saturation(-60);
@@ -83,8 +87,8 @@ function vintage() {
       this.render();
     });
   }
-  function jarques() {
-    Caman("#img_ori", function () {
+  let jarques = () => {
+    Caman(tag_img, function () {
       this.saturation(-35);
       this.curves("b", [20, 0], [90, 120], [186, 144], [255, 230]);
       this.curves("r", [0, 0], [144, 90], [138, 120], [255, 255]);
@@ -93,8 +97,8 @@ function vintage() {
       this.render();
     });
   }
-  function pinhole() {
-    Caman("#img_ori", function () {
+  let pinhole = () => {
+    Caman(tag_img, function () {
       this.greyscale();
       this.sepia(10);
       this.exposure(10);
@@ -102,8 +106,8 @@ function vintage() {
       this.render();
     });
   }
-  function glowingSun() {
-    Caman("#img_ori", function () {
+  let glowingSun = () => {
+    Caman(tag_img, function () {
       this.brightness(10);
       this.newLayer(function () {
         this.setBlendingMode("multiply");
@@ -116,8 +120,8 @@ function vintage() {
       this.render();
     });
   }
-  function nostalgia() {
-    Caman("#img_ori", function () {
+  let nostalgia = () => {
+    Caman(tag_img, function () {
       this.saturation(20);
       this.gamma(1.4);
       this.greyscale();

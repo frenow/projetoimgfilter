@@ -1,25 +1,22 @@
-// Criação da nossa "classe" de controle.
-// Não entrarei neste detalhe aqui, mas por favor,
-// se você ouvir alguém falar que javascript é uma
-// linguagem orientada a objetos, no mínimo, não
-// acredite nele. Javascript é uma linguagem prototipada.
-// Essa maneira de programar javascript é uma preferencia
-// minha. Prefiro este estilo a criar várias funções perdidas.
-function FileFrame(fileArea, fileTitle) {
+//
+//
+function FileFrame(fileArea, fileTitle="sem_nome.jpg") {
   var self = this;
 
   this.fileArea = fileArea;
   this.fileTitle = fileTitle;
-
-  this.init = function() {
+//uso de arrow function
+//  this.init = function() {
+  this.init = () => {
     // Registrando eventos de drag and drop
     self.fileArea.addEventListener("dragleave", self.dragHover, false);
     self.fileArea.addEventListener("dragover", self.dragHover, false);
     self.fileArea.addEventListener("drop", self.drop, false);
  
   };
-
-  this.dragHover = function(e) {
+//inclusao de arrow function
+//  this.dragHover = function(e) {
+  this.dragHover = (e) => {
     // Impede possíveis tratamentos dos arquivos
     // arrastados pelo navegador, por exemplo, exibir
     // o conteudo do mesmo.
@@ -30,7 +27,9 @@ function FileFrame(fileArea, fileTitle) {
     self.fileArea.className = (e.type == "dragover" ? "hover" : "");  
   };
 
-  this.drop = function(e) {
+//inclusao de arrow function
+//  this.drop = function(e) {
+  this.drop = (e) => {
     self.dragHover(e);  
 
     // Volta um array com os arquivos arratados,
@@ -52,39 +51,43 @@ function FileFrame(fileArea, fileTitle) {
     self.sendFile(self.file);
     */
   };
-
+//uso de arrow function
   // Esse método irá ler o arquivo na memória,
   // depois iremos mostrá-lo no nosso frame
-  this.read = function(file) {
+//  this.read = function(file) {
+  this.read = (file) => {
     // Iremos ler apenas imagens nesse exemplo
     // e iremos exibi-lo no frame
     if (file.type.match('image.*')) {
-      var reader = new FileReader();
+      let reader = new FileReader();
 
       // Callback que será executado após a leitura do arquivo
-      reader.onload = function(f) {
-        self.fileArea.innerHTML = "";
-        self.fileArea.setAttribute("style", "padding: 0px !important;");
+        reader.onload = function(f) {
+          self.fileArea.innerHTML = "";
+          self.fileArea.setAttribute("style", `padding: 0px !important;
+		                                       border-radius: 20px;
+											   border: 1px solid #ddd;`);
         
-        // Criação do elemento que será utilizado para exibir a imagem
-        var img = document.createElement("img");
-        img.setAttribute("id", "img_ori");
-        img.setAttribute("src", f.target.result);
-        //img.setAttribute("height", "350");
+          // Criação do elemento que será utilizado para exibir a imagem
+          let img = document.createElement("img");
+          img.setAttribute("id", "img_ori");
+          img.setAttribute("src", f.target.result);
+          //img.setAttribute("height", "350");
 
-        self.fileArea.appendChild(img);
-      }
+          self.fileArea.appendChild(img);
+        }
 
       // Irá ler o arquivo para ser acessado através de uma url
       reader.readAsDataURL(file);
     }
   }
-
+//uso de arrow function
   // Essa função pode ser utilizada como 
-  this.sendFile = function(file) {
+//  this.sendFile = function(file) {
+  this.sendFile = (file) => {
 
     // Criaremos um formulário
-    var f = new FormData();
+    const f = new FormData();
     // Passando o arquivo para o formulário
     f.append("file", file);
 
@@ -92,7 +95,8 @@ function FileFrame(fileArea, fileTitle) {
     var request = new XMLHttpRequest();
     request.open("POST", "", true);
     request.send(f);
-    request.onreadystatechange=function(){
+//    request.onreadystatechange=function(){
+    request.onreadystatechange=() => {
       // Término do envio do formulário
       if(request.readyState==4) {
       }
@@ -102,8 +106,8 @@ function FileFrame(fileArea, fileTitle) {
 
 // Recupera a div que conterá a imagem
 // e o span com o título de nosso arquivo
-var area = document.getElementById("image-area");
-var title = document.getElementById("title");
+const area = document.getElementById("image-area");
+const title = document.getElementById("title");
 
-var fileFrameArea = new FileFrame(area, title);
+const fileFrameArea = new FileFrame(area, title);
 fileFrameArea.init();
