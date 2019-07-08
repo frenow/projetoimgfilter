@@ -1,0 +1,70 @@
+/* ==========================================================================
+   CSS UPLOAD DRAG AND DROP
+   ========================================================================== */
+html {
+  font-size: 1em;
+  line-height: 1.4;
+  background-color: #e8f0f0;
+  color: #222;
+}
+html body {
+  width: 90%;
+  padding: 0;
+  margin: 0 auto !important;
+}
+html main #example-content {
+  text-align: center;
+  float: left;
+}
+html main #frame {
+  background-color: #000;
+  color: #fff;
+  margin: 50px;
+  width: 400px;
+  height: 450px;
+  padding: 50px;
+}
+html main #image-area {
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px dotted #fff;
+  overflow: hidden;
+}
+html main #divButtonFormat {
+  /*background-color: #0b6cc7;*/
+  margin: 0px;
+  width: 260px;
+  height: 100%;
+  padding: 50px;
+  float: left;
+}
+html main .buttonFormat {
+  border-radius: 8px;
+  background-color: #0a0b14 !important;
+  font-family: "Segoe UI";
+  text-shadow: 0 1px 0 #666;
+  box-shadow: inset 0 1px 1px #fff, 0 2px 3px #666;
+  padding: 4px 11px;
+  margin: 2px;
+  width: 250px;
+  height: 40px;
+  border: 1px solid #0a0b14;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+html main .buttonFormat:hover {
+  box-shadow: inset 0 4px 5px #fff, 0 2px 3px #666;
+  font-weight: bold;
+}
+html main .buttonFormat:active {
+  box-shadow: inset 0 4px 5px #fff, 0 1px 3px #666 !important;
+  top: 2px;
+}
+html main h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=output.css.map */
