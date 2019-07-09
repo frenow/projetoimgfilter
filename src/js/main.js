@@ -1,3 +1,5 @@
+import '../img/favicon.ico'
+import '../css/output.css'
 //
 //
 function FileFrame(fileArea, fileTitle="sem_nome.jpg") {

@@ -19,7 +19,7 @@ plugins: [
         filename: 'index.html',
         template: path.join(__dirname, 'src/index.html')
     }),
-    new ExtractTextPlugin('main.css'),
+    new ExtractTextPlugin('output.css'),
     new UglifyJSPlugin()
 ],
 
