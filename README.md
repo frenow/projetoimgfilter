@@ -12,3 +12,11 @@ http://camanjs.com/
 
 compartilhar facebook
 https://developers.facebook.com/docs/plugins/share-button?locale=pt_BR
+
+Recursos:
+-Escopo let/const
+-Template Literals
+-Arrow Functions (( ) => { })
+-Objetos Literais
+
+Webpack module bundler
