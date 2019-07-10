@@ -1,5 +1,9 @@
 import '../img/favicon.ico'
-import '../css/output.css'
+import '../icon.png'
+//import '../css/output.css'
+import '../css/input.scss';
+import { vintage, lomo, clarity, sinCity } from '../js/filter.js'
+
 //
 //
 function FileFrame(fileArea, fileTitle="sem_nome.jpg") {

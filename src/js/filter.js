@@ -1,19 +1,18 @@
-// funções de filtro
+import * as Caman from '../js/filter.js'
 
-//uso das arrow function
-//  function vintage() {
-  const tag_img = '#img_ori';	
-  let vintage = () => {
-    Caman(tag_img, function () {
-      this.greyscale();
-      this.contrast(5);
-      this.noise(3);
-      this.sepia(100);
-      this.channels({ red: 8, blue: 2, green: 4 });
-      this.gamma(0.87);
-      this.render();
-    });
-  }
+const tag_img = '#img_ori';	
+
+  var vintage = () => {
+	Caman("#img_ori", function () {
+		this.greyscale();
+		this.contrast(5);
+		this.noise(3);
+		this.sepia(100);
+		this.channels({red:8,blue:2,green:4});
+		this.gamma(0.87);
+		this.render();
+	});
+	}
   let lomo = () => {
     Caman(tag_img, function () {
       this.brightness(15);
@@ -141,3 +140,5 @@
       this.render();
     });
   }
+
+export { vintage, lomo, clarity, sinCity }
