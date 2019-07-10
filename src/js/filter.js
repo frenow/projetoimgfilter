@@ -1,8 +1,6 @@
-import * as Caman from '../js/filter.js'
-
 const tag_img = '#img_ori';	
 
-  var vintage = () => {
+  global.vintage = () => {
 	Caman("#img_ori", function () {
 		this.greyscale();
 		this.contrast(5);
@@ -12,8 +10,8 @@ const tag_img = '#img_ori';
 		this.gamma(0.87);
 		this.render();
 	});
-	}
-  let lomo = () => {
+  }	   
+  global.lomo = () => {
     Caman(tag_img, function () {
       this.brightness(15);
       this.exposure(15);
@@ -23,7 +21,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let clarity = () => {
+  global.clarity = () => {
     Caman(tag_img, function () {
       this.vibrance(20);
       this.curves("rgb", [5, 0], [130, 150], [190, 220], [250, 255]);
@@ -32,7 +30,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let sinCity = () => {
+  global.sinCity = () => {
     Caman(tag_img, function () {
       this.contrast(100);
       this.brightness(15);
@@ -43,7 +41,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let sumrise = () => {
+  global.sumrise = () => {
     Caman(tag_img, function () {
       this.exposure(3.5);
       this.saturation(-5);
@@ -56,7 +54,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let orangePeel = () => {
+  global.orangePeel = () => {
     Caman(tag_img, function () {
       this.curves("rgb", [0, 0], [100, 50], [140, 200], [255, 255]);
       this.vibrance(-30);
@@ -66,7 +64,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let love = () => {
+  global.love = () => {
     Caman(tag_img, function () {
       this.brightness(5);
       this.exposure(8);
@@ -76,7 +74,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let grungy = () => {
+  global.grungy = () => {
     Caman(tag_img, function () {
       this.gamma(1.5);
       this.clip(25);
@@ -86,7 +84,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let jarques = () => {
+  global.jarques = () => {
     Caman(tag_img, function () {
       this.saturation(-35);
       this.curves("b", [20, 0], [90, 120], [186, 144], [255, 230]);
@@ -96,7 +94,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let pinhole = () => {
+  global.pinhole = () => {
     Caman(tag_img, function () {
       this.greyscale();
       this.sepia(10);
@@ -105,7 +103,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let glowingSun = () => {
+  global.glowingSun = () => {
     Caman(tag_img, function () {
       this.brightness(10);
       this.newLayer(function () {
@@ -119,7 +117,7 @@ const tag_img = '#img_ori';
       this.render();
     });
   }
-  let nostalgia = () => {
+  global.nostalgia = () => {
     Caman(tag_img, function () {
       this.saturation(20);
       this.gamma(1.4);
@@ -141,4 +139,4 @@ const tag_img = '#img_ori';
     });
   }
 
-export { vintage, lomo, clarity, sinCity }
+export { vintage, lomo, clarity, sinCity, sumrise, orangePeel, love, grungy, jarques, pinhole, glowingSun, nostalgia }

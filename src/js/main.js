@@ -2,7 +2,7 @@ import '../img/favicon.ico'
 import '../icon.png'
 //import '../css/output.css'
 import '../css/input.scss';
-import { vintage, lomo, clarity, sinCity } from '../js/filter.js'
+import { vintage, lomo, clarity, sinCity, sumrise, orangePeel, love, grungy, jarques, pinhole, glowingSun, nostalgia } from '../js/filter.js'
 
 //
 //
