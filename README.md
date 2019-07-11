@@ -18,5 +18,5 @@ Recursos:
 -Template Literals
 -Arrow Functions (( ) => { })
 -Objetos Literais
-
+-CSS Metodologia BEM
 Webpack module bundler

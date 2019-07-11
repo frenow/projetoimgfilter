@@ -10,96 +10,101 @@ html {
     height: 1.4;
   }
   background: {
-    color: rgb(232, 240, 240);
+    color: rgb(233, 250, 250);
   }
   color: #222;
+}
 
-  body {
-    width: 90%;
-    padding: 0;
-    margin: 0 auto !important;
+body {
+  width: 90%;
+  padding: 0;
+  margin: 0 auto !important;
+}
+
+main {
+  //#example-content
+  #main__exampleContent {
+    text: {
+      align: center;
+    }
+    float: left;
   }
-
-  main {
-    #example-content {
-      text: {
-        align: center;
-      }
-      float: left;
+  //#frame
+  #main__frame {
+    background: {
+      color: #000;
     }
-    #frame {
-      background: {
-        color: #000;
-      }
-      color: #fff;
-      margin: 50px;
-      width: 400px;
-      height: 450px;
-      padding: 50px;
+    color: #fff;
+    margin: 50px;
+    width: 400px;
+    height: 450px;
+    padding: 50px;
+  }
+  //#image-area
+  #main__imageArea {
+    padding: {
+      top: 50%;
+      bottom: 50%;
     }
-    #image-area {
-      padding: {
-        top: 50%;
-        bottom: 50%;
-      }
-      margin: {
-        bottom: 15px;
-      }
-      width: 100%;
-      border: 1px dotted #fff;
-      overflow: hidden;
+    margin: {
+      bottom: 15px;
     }
-    #divButtonFormat {
-      /*background-color: #0b6cc7;*/
-      margin: 0px;
-      width: 260px;
-      height: 100%;
-      padding: 50px;
-      float: left;
+    width: 100%;
+    border: 1px dotted #fff;
+    overflow: hidden;
+  }
+  //#divButtonFormat}
+  #main__divButtonFormat {
+    /*background-color: #0b6cc7;*/
+    margin: 0px;
+    width: 260px;
+    height: 100%;
+    padding: 50px;
+    float: left;
+  }
+  //.buttonFormat
+  .main__buttonFormat {
+    border: {
+      radius: 8px;
     }
-    .buttonFormat {
-      border: {
-        radius: 8px;
-      }
-      background: {
-        color: #0a0b14 !important;
+    background: {
+      color: #0a0b14 !important;
+    }
+    font: {
+      family: "Segoe UI";
+    }
+    text: {
+      shadow: 0 1px 0 #666;
+    }
+    box: {
+      shadow: inset 0 1px 1px #fff, 0 2px 3px #666;
+    }
+    padding: 4px 11px;
+    margin: 2px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #0a0b14;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+      box: {
+        shadow: inset 0 4px 5px #fff, 0 2px 3px #666;
       }
       font: {
-        family: "Segoe UI";
-      }
-      text: {
-        shadow: 0 1px 0 #666;
-      }
-      box: {
-        shadow: inset 0 1px 1px #fff, 0 2px 3px #666;
-      }
-      padding: 4px 11px;
-      margin: 2px;
-      width: 250px;
-      height: 40px;
-      border: 1px solid #0a0b14;
-      color: #fff;
-      cursor: pointer;
-      position: relative;
-      &:hover {
-        box: {
-          shadow: inset 0 4px 5px #fff, 0 2px 3px #666;
-        }
-        font: {
-          weight: bold;
-        }
-      }
-      &:active {
-        box: {
-          shadow: inset 0 4px 5px #fff, 0 1px 3px #666 !important;
-        }
-        top: 2px;
+        weight: bold;
       }
     }
-    h1 {
-      text: {
-        align: center;
+    &:active {
+      box: {
+        shadow: inset 0 4px 5px #fff, 0 1px 3px #666 !important;
       }
+      top: 2px;
+    }
+  }
+  h1 {
+    text: {
+      align: center;
     }
   }
 }

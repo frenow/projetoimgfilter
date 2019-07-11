@@ -112,7 +112,7 @@ function FileFrame(fileArea, fileTitle="sem_nome.jpg") {
 
 // Recupera a div que conterá a imagem
 // e o span com o título de nosso arquivo
-const area = document.getElementById("image-area");
+const area = document.getElementById("main__imageArea");
 const title = document.getElementById("title");
 
 const fileFrameArea = new FileFrame(area, title);
