@@ -3,7 +3,7 @@ import '../icon.png'
 //import '../css/output.css'
 import '../css/input.scss';
 import { vintage, lomo, clarity, sinCity, sumrise, orangePeel, love, grungy, jarques, pinhole, glowingSun, nostalgia } from '../js/filter.js'
-
+import { readURL } from '../js/upload.js'
 //
 //
 function FileFrame(fileArea, fileTitle="sem_nome.jpg") {
