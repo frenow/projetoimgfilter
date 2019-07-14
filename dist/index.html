@@ -12,7 +12,7 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
-  <h1>HTML5 Drag and Drop</h1>
+  <h1 tabindex="1">HTML5 Drag and Drop</h1>
   <meta name="theme-color" content="#fafafa">
 
   <!-- Either include the full CamanJS code including plugins -->
@@ -21,13 +21,16 @@
 </head>
 
 <body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
   <!-- Add your site or application content here -->
-  <main>
-    <div id="main__exampleContent">
+  <main role="main">
+   <form id="form1" runat="server">
+   <p id="errors" role="alert" aria-atomic="true"></p>
+   <label for="imgUpload">Escolha a Imagem</label><br>
+     <input type="file" id="imgUpload" accept="image/*">
+   </form>
+  
+  <div tabindex="2" id="main__exampleContent">
       <div id="main__frame">
         <div id="main__imageArea">
           <span id="drop-message"> Arraste a imagem aqui ... </span>
@@ -35,23 +38,26 @@
         <span id="title"> Digite um titulo </span>
       </div>
     </div>
-    <div id="main__divButtonFormat">
-      <button class="main__buttonFormat" onclick="vintage()">Aplicar Filtro Vintage</button>
-      <button class="main__buttonFormat" onclick="lomo()">Aplicar Filtro Lomo</button>
-      <button class="main__buttonFormat" onclick="clarity()">Aplicar Filtro Clarity</button>
-      <button class="main__buttonFormat" onclick="sinCity()">Aplicar Filtro sinCity</button>
-      <button class="main__buttonFormat" onclick="sumrise()">Aplicar Filtro Sumrise</button>
-      <button class="main__buttonFormat" onclick="orangePeel()">Aplicar Filtro orangePeel</button>
-      <button class="main__buttonFormat" onclick="love()">Aplicar Filtro Love</button>
-      <button class="main__buttonFormat" onclick="grungy()">Aplicar Filtro Grungy</button>
-      <button class="main__buttonFormat" onclick="jarques()">Aplicar Filtro Jarques</button>
-      <button class="main__buttonFormat" onclick="pinhole()">Aplicar Filtro Pinhole</button>
-      <button class="main__buttonFormat" onclick="glowingSun()">Aplicar Filtro glowingSun</button>
-      <button class="main__buttonFormat" onclick="nostalgia()">Aplicar Filtro Nostalgia</button>
+	
+    <div id="main__divButtonFormat" role="menubar">
+      <button data-message="Botão Aplicar Filtro Vintage" role="menuitem" class="main__buttonFormat" onclick="vintage()">Aplicar Filtro Vintage</button>
+      <button data-message="Botão Aplicar Filtro Lomo" role="menuitem" class="main__buttonFormat" onclick="lomo()">Aplicar Filtro Lomo</button>
+      <button data-message="Botão Aplicar Filtro Clarity" role="menuitem" class="main__buttonFormat" onclick="clarity()">Aplicar Filtro Clarity</button>
+      <button data-message="Botão Aplicar Filtro sinCity" role="menuitem" class="main__buttonFormat" onclick="sinCity()">Aplicar Filtro sinCity</button>
+      <button data-message="Botão Aplicar Filtro sumrise" role="menuitem" class="main__buttonFormat" onclick="sumrise()">Aplicar Filtro Sumrise</button>
+      <button data-message="Botão Aplicar Filtro orangePeel" role="menuitem" class="main__buttonFormat" onclick="orangePeel()">Aplicar Filtro orangePeel</button>
+      <button data-message="Botão Aplicar Filtro love" role="menuitem" class="main__buttonFormat" onclick="love()">Aplicar Filtro Love</button>
+      <button data-message="Botão Aplicar Filtro Grungy" role="menuitem" class="main__buttonFormat" onclick="grungy()">Aplicar Filtro Grungy</button>
+      <button data-message="Botão Aplicar Filtro jarques" role="menuitem" class="main__buttonFormat" onclick="jarques()">Aplicar Filtro Jarques</button>
+      <button data-message="Botão Aplicar Filtro pinhole" role="menuitem" class="main__buttonFormat" onclick="pinhole()">Aplicar Filtro Pinhole</button>
+      <button data-message="Botão Aplicar Filtro glowingSun" role="menuitem" class="main__buttonFormat" onclick="glowingSun()">Aplicar Filtro glowingSun</button>
+      <button data-message="Botão Aplicar Filtro nostalgia" role="menuitem" class="main__buttonFormat" onclick="nostalgia()">Aplicar Filtro Nostalgia</button>
     </div>
   </main>
 
-  <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffotofilter.epizy.com%2F&layout=button&size=large&appId=2234321383499702&width=118&height=28" width="118" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+  <iframe aria-describeby="desc-send" src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffotofilter.epizy.com%2F&layout=button&size=large&appId=2234321383499702&width=118&height=28" width="118" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+  <!--p id="desc-send"> Compartilhar imagem no facebook. </p-->
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -63,6 +69,33 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+function readURL(input) {
+	 $('#errors').html('');
+     for(var i =0; i< input.files.length; i++){
+         if (input.files[i]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+               var img = $('<img id="dynamic">');
+               img.attr('src', e.target.result);
+               img.attr('id', 'img_ori');
+               img.appendTo('#form1');  
+            }
+            reader.readAsDataURL(input.files[i]);
+           }
+		   else {
+				$('#errors').append('<p>Imagem não encontrada, escolha a imagem.</p>');
+		   }
+        }
+    }
+
+    $("#imgUpload").change(function(){
+        readURL(this);
+    });
+
+</script>
+
 <script type="text/javascript" src="js/bundle.js"></script></body>
 
 </html>
